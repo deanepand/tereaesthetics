@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dusty-50: #fdf2f4;
+  --color-dusty-100: #fce7eb;
+  --color-dusty-200: #f9d0d9;
+  --color-dusty-300: #f4a9ba;
+  --color-dusty-400: #ec7a96;
+  --color-dusty-500: #e05478;
+  --color-dusty-600: #cb3460;
+  --color-dusty-700: #ab2550;
+  --color-dusty-800: #8f2248;
+  --color-dusty-900: #7a2042;
+
+  --color-sage-50: #f4f7f4;
+  --color-sage-100: #e6ece5;
+  --color-sage-200: #cdd9cc;
+  --color-sage-300: #a8bda6;
+  --color-sage-400: #7e9c7b;
+  --color-sage-500: #5d7f5a;
+  --color-sage-600: #496646;
+  --color-sage-700: #3c5239;
+  --color-sage-800: #324230;
+  --color-sage-900: #2a3728;
+
+  --color-champagne-50: #fdfaf3;
+  --color-champagne-100: #fbf3e0;
+  --color-champagne-200: #f6e4bc;
+  --color-champagne-300: #f0d08e;
+  --color-champagne-400: #e9b85e;
+  --color-champagne-500: #e3a03c;
+  --color-champagne-600: #d48a2d;
+  --color-champagne-700: #b06d26;
+  --color-champagne-800: #8f5725;
+  --color-champagne-900: #754821;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Georgia', 'Times New Roman', serif;
+}
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #f4a9ba #fdf2f4;
+  }
+
+  html {
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  #root {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(-20px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-toastIn {
+  animation: toastIn 0.3s ease-out forwards;
+}
+
+/* Hide scrollbar for category chips */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
